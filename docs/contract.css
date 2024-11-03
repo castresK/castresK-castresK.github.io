@@ -52,8 +52,10 @@ nav ul li a:hover {
 }
 
 main {
-    margin-top: 40px;
+    margin-top: 100px;
     text-align: center;
+    font-size: 2em;
+    
 }
 
 .contact-container {
@@ -61,6 +63,7 @@ main {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .avatar {
@@ -69,6 +72,7 @@ main {
     background-color: #d0d0d0; 
     border-radius: 20px;
     margin-right: 40px;
+    transition: transform 0.3s ease; 
 }
 
 .contact-list {
@@ -78,14 +82,12 @@ main {
 
 .contact-list li {
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .contact-list a {
     color: #1b2f55;
-    text-decoration: none;
-}
-
-.contact-list a:hover {
+    font-weight: 500;
     text-decoration: underline;
 }
 
@@ -101,25 +103,13 @@ main {
     }
 }
 
-
 header {
     animation: fadeIn 1s ease-in-out;
-}
-
-
-.avatar {
-    width: 200px;
-    height: 200px;
-    background-color: #d0d0d0; 
-    border-radius: 20px;
-    margin-right: 40px;
-    transition: transform 0.3s ease; 
 }
 
 .avatar:hover {
     transform: scale(1.05); 
 }
-
 
 nav ul li a,
 .contact-list a {
@@ -132,9 +122,62 @@ nav ul li a:hover,
     text-decoration: underline; 
 }
 
-
 main {
     margin-top: 40px;
     text-align: center;
     animation: fadeIn 1.2s ease-in-out; 
+}
+
+
+@media (max-width: 800px) {
+
+    nav ul {
+        flex-direction: column; 
+        gap: 10px; 
+        font-size: 1.2rem;
+    }
+
+    .contact-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .avatar {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+        width: 150px;
+        height: 150px; 
+    }
+
+    .contact-list {
+        text-align: center; 
+    }
+
+    .contact-list li {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        font-size: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    main {
+        margin-top: 20px;
+    }
+
+    .contact-list li {
+        margin-bottom: 8px; 
+        font-size: 1rem; 
+        font-weight: 600;
+    }
+
+    .contact-list li a {
+        text-decoration: underline;
+    }
 }

@@ -13,9 +13,8 @@ body {
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-    padding-top: 20px;
+    padding: 20px; 
 }
-
 
 @keyframes slideIn {
     from {
@@ -33,7 +32,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 header h1 {
@@ -58,9 +57,11 @@ nav ul li a {
     font-weight: 700;
 }
 
+
 main {
-    margin-top: 40px;
+    margin-top: 100px;
     text-align: center;
+    font-size: 2em;
 }
 
 .projects-container {
@@ -74,9 +75,10 @@ main {
 
 .project {
     display: flex;
+    border-radius: 10%;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 250px; 
     margin: 10px; 
     text-align: center;
     opacity: 0; 
@@ -85,9 +87,8 @@ main {
 }
 
 .project-avatar img {
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
+    width: 100%; 
+    height: auto;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
@@ -95,10 +96,13 @@ main {
 .project:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    background-color:	#4a5f90;
+    width: 300px;
 }
 
 .project-avatar img:hover {
     transform: scale(1.05); 
+    width: 250px;
 }
 
 .project h3 {
@@ -109,10 +113,14 @@ main {
 }
 
 .project p {
-    font-size: 1rem;
-    color: #555;
     opacity: 0; 
     transition: opacity 0.3s ease; 
+    margin-top: 5px; 
+    font-size: 0.9rem; 
+    margin-bottom: 10px;
+    width: 180px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .project:hover h3,
@@ -126,4 +134,48 @@ main {
 
 .project:hover p {
     transition-delay: 0.2s; 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.5rem; 
+    }
+
+    nav ul {
+        flex-direction: column; 
+        gap: 10px; 
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; 
+    }
+
+    .projects-container {
+        justify-content: center; 
+    }
+
+    .project {
+        width: 90%;
+        max-width: 300px; 
+        border-radius: 15%;
+    }
+
+    .project h3 {
+        margin-top: -90px; 
+        font-size: 1.3rem; 
+    }
+
+    .project p {
+        margin-top: 5px; 
+        font-size: 0.9rem; 
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #fff;
+    }
 }
