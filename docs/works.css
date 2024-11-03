@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #7e93ba, #9fb8d2);
+    color: #1b2f55;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 20px;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #1b2f55;
+}
+
+nav ul {
+    font-size: 1.5rem;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1b2f55;
+    font-weight: 700;
+}
+
+main {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 100%;
+    gap: 20px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin: 10px; 
+    text-align: center;
+    opacity: 0; 
+    animation: slideIn 0.5s forwards;
+    animation-delay: calc(0.1s * var(--i)); 
+}
+
+.project-avatar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.project-avatar img:hover {
+    transform: scale(1.05); 
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.project p {
+    font-size: 1rem;
+    color: #555;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.project:hover h3,
+.project:hover p {
+    opacity: 1; 
+}
+
+.project:hover h3 {
+    transition-delay: 0.1s; 
+}
+
+.project:hover p {
+    transition-delay: 0.2s; 
+}
